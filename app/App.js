@@ -6,7 +6,6 @@ class App {
 
   NotesController = new NotesController()
 
-
   constructor() {
     if (USE_ROUTER) {
       this.router = router
