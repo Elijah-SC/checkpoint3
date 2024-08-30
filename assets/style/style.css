@@ -1,1 +1,15 @@
 /* BASIC STYLES HERE */
+
+
+:root {
+
+  --dark: #1F1D38;
+  --card: #282546;
+  --muted: #7B89D2;
+
+}
+
+* {
+  background-color: var(--dark);
+  color: white;
+}
