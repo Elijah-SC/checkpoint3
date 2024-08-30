@@ -41,3 +41,9 @@ h1 {
 .text-muted {
   color: var(--muted);
 }
+
+
+.sidebar {
+  border-left: 4px solid blue;
+  padding-left: .5em;
+}
