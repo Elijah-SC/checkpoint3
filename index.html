@@ -23,20 +23,20 @@
 
   <!-- SECTION -->
   <main class="container-fluid">
-    <p class="p-1 fs-3">Jot..</p>
+    <p class="p-1 fs-3">Notepad..</p>
     <div class="row justify-content-center pageCard">
-      <section class="col-4 cardlist">
+      <section class="col-md-4 cardlist">
         <div class="m-1 bg-card activeCard">
-          <p class="text-end">Total Jots</p>
+          <p id="totalNotes" class="text-end">Total Jots</p>
           <div>
-            <p class="ps-3 text-muted">add a Jot</p>
+            <p class="ps-3 text-muted">add a Note</p>
             <form onsubmit="app.NotesController.createNote()" class="d-flex align-items-center justify-content-evenly">
               <div>
                 <input class="rounded" type="color" name="color" required>
               </div>
               <div class="mx-2">
-                <input type="text" class="form-control" id="name" name="name" placeholder="name of Jot" minlength="3"
-                  maxlength="12" required>
+                <input type="text" class="form-control" id="name" name="name" placeholder="name of Note" minlength="3"
+                  maxlength="15" required>
               </div>
               <button class="btn btn-primary" type="submit">Create</button>
             </form>
@@ -49,7 +49,7 @@
 
           <div id="notesList">
 
-            <div class="sidebar">
+            <!-- <div class="sidebar">
               <div class="d-flex justify-content-between">
                 <h3>CSS Tricks</h3>
                 <time>8/30/24</time>
@@ -61,7 +61,7 @@
                 </p>
               </div>
 
-            </div>
+            </div> -->
 
 
 
@@ -69,39 +69,25 @@
         </div>
 
 
-
       </section>
 
 
-      <section class="col-8">
+      <section class="col-md-8">
 
         <div id="activeCard" class="m-1 bg-card activeCard">
-          <!-- <div class="p-3">
-            <div class="mb-3" style="border-left: 2px solid blue;">
-              <div class="ms-2">
-                <h1>CSS Tricks</h1>
+          <div class="container-fluid activeCard d-flex align-items-center justify-content-around">
+            <div class="row justify-content-around">
+              <div class="col-12 text-center">
+
+                <img class="w-100 img-fluid text-center" src="assets/img/default.png"
+                  alt="Guy working on computer drinking coffee">
+
+                <p class="text-center fw-bold">Create or select a Note to start</p>
+
+
               </div>
-              <div class="container-fluid h-100">
-                <div class="row justify-content-between">
-
-                  <div class="col-5">
-                    <p class="ms-2">Created on:</p>
-                    <p class="ms-2">Last updated:</p>
-                  </div>
-                  <div class="col-5 text-center">
-                    <button class="mx-1 btn btn-outline-danger"><i class="mdi mdi-trash-can"></i>Delete</button>
-                    <button class="mx-1 btn btn-primary"><i class="mdi mdi-content-save-check-outline"></i>Save</button>
-                  </div>
-                </div>
-              </div>
-
             </div>
-
-            <div class="row activeText">
-              <textarea class="rounded bg-card text-muted" name="" id=""></textarea>
-
-            </div>
-          </div> -->
+          </div>
         </div>
 
       </section>

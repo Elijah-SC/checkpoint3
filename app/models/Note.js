@@ -9,7 +9,7 @@ export class Note {
 
     this.id = generateId()
     this.lastEdited = data.lastEdited == undefined ? new Date() : new Date(data.lastEdited)
-    this.createdOn = new Date()
+    this.createdOn = data.createdOn == undefined ? new Date() : new Date(data.createdOn)
     this.name = data.name
     this.body = data.body || ``
     this.color = data.color
@@ -19,11 +19,11 @@ export class Note {
 
   get notesListTemplate() {
 
-    return /*HTML*/`
+    return `
     <div onclick="app.NotesController.setActiveNote('${this.id}')" class="ps-2 mb-3" role="button" style="border-left: 2px solid ${this.color}">
     <div class="d-flex justify-content-between">
       <p class="fw-bold fs-5">${this.name}</p>
-      <time>${this.createdDate}</time>
+      <time title="created ${this.createdDate} at ${this.createdTime} ">${this.createdDate}</time>
     </div>
     <div>
       <p class="text-preview text-muted">${this.bodyPreview}...</p>
@@ -42,24 +42,28 @@ export class Note {
               <div class="container-fluid h-100">
                 <div class="row justify-content-between">
                   <div class="col-5">
-                    <p class="ms-2">Created on: ${this.createdDate}</p>
+                    <p class="ms-2">Created on: ${this.createdDate} at ${this.createdTime}</p>
                     <p class="ms-2">Last updated: ${this.lastEditedDate} at ${this.lastEditedTime}</p>
                   </div>
                   <div class="col-5 text-center">
-                    <button class="mx-1 btn btn-outline-danger"><i class="mdi mdi-trash-can"></i>Delete</button>
+                    <button onclick="app.NotesController.deleteNote('${this.id}')" class="mx-1 btn btn-outline-danger"><i class="mdi mdi-trash-can"></i>Delete</button>
                     <button class="mx-1 btn btn-primary"><i class="mdi mdi-content-save-check-outline"></i>Save</button>
                   </div>
                 </div>
               </div>
             </div>
             <div class="row activeText">
-              <textarea class="rounded bg-card text-muted" name="" id="">${this.body}</textarea>
+              <textarea onblur="app.NotesController.updateNote()" class="rounded bg-card text-muted" name="" id="">${this.body}</textarea>
             </div>
           </div>`
   }
 
   get createdDate() {
     return this.createdOn.toLocaleDateString()
+  }
+
+  get createdTime() {
+    return this.createdOn.toLocaleTimeString()
   }
 
   get lastEditedDate() {

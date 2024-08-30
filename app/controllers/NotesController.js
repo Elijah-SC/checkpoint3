@@ -10,7 +10,17 @@ export class NotesController {
     // Pop.toast(`NotesController is live`)
     AppState.on(`activeNote`, this.drawActiveNote)
     AppState.on(`Notes`, this.drawNotesList)
-    this.drawNotesList()
+    AppState.on(`Notes`, this.drawTotalNotes)
+
+    notesService.loadNotes()
+  }
+
+  drawTotalNotes() {
+    let notes = AppState.Notes
+    let notesCount = 0
+    notes.forEach(note => notesCount++)
+    // console.log(`drawing total Notes`);
+    setHTML(`totalNotes`, `${notesCount} notes`)
   }
 
 
@@ -38,6 +48,22 @@ export class NotesController {
     const noteDataFromForm = getFormData(form)
     // console.log(`note data from form`, noteDataFromForm)
     notesService.createNote(noteDataFromForm)
+  }
+
+  updateNote() {
+    console.log(`text area blurred`);
+    const textAreaElm = event.target
+    // @ts-ignore there is a value on textAreaElm 
+    const updatedBody = textAreaElm.value
+    // console.log(`text from text area`, updatedBody);
+    notesService.updateNote(updatedBody)
+
+  }
+
+  deleteNote(noteId) {
+    console.log(`deleting Note`);
+    notesService.deleteNote(noteId)
+
   }
 
 }

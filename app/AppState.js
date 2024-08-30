@@ -31,6 +31,7 @@ class ObservableAppState extends EventEmitter {
       color: `#ff0000`,
     }),
 
+
   ]
 
   /**@type {Note} */
