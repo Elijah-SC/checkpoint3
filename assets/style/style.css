@@ -52,3 +52,14 @@ h6 {
   border-left: 4px solid blue;
   padding-left: .5em;
 }
+
+
+.text-preview {
+  font-size: 16px;
+
+}
+
+.activeText {
+  min-height: 75vh;
+
+}

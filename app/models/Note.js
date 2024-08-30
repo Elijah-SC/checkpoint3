@@ -26,7 +26,7 @@ export class Note {
       <time>${this.createdDate}</time>
     </div>
     <div>
-      <p class="fs-7">${this.body}</p>
+      <p class="text-preview text-muted">${this.bodyPreview}...</p>
     </div>
 
   </div>`
@@ -35,6 +35,14 @@ export class Note {
   get createdDate() {
     return this.createdOn.toLocaleDateString()
   }
+
+
+  get bodyPreview() {
+    return this.body.substring(0, 50)
+  }
 }
+
+
+
 
 
