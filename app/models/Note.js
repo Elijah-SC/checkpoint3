@@ -35,15 +35,15 @@ export class Note {
   get activeCardTemplate() {
     return `
     <div class="p-3">
-            <div class="mb-3" style="border-left: 2px solid blue;">
+            <div class="mb-3" style="border-left: 2px solid ${this.color};">
               <div class="ms-2">
-                <h1>CSS Tricks</h1>
+                <h1>${this.name}</h1>
               </div>
               <div class="container-fluid h-100">
                 <div class="row justify-content-between">
                   <div class="col-5">
-                    <p class="ms-2">Created on:</p>
-                    <p class="ms-2">Last updated:</p>
+                    <p class="ms-2">Created on: ${this.createdDate}</p>
+                    <p class="ms-2">Last updated: ${this.lastEditedDate}</p>
                   </div>
                   <div class="col-5 text-center">
                     <button class="mx-1 btn btn-outline-danger"><i class="mdi mdi-trash-can"></i>Delete</button>
@@ -53,7 +53,7 @@ export class Note {
               </div>
             </div>
             <div class="row activeText">
-              <textarea class="rounded bg-card text-muted" name="" id=""></textarea>
+              <textarea class="rounded bg-card text-muted" name="" id="">${this.body}</textarea>
             </div>
           </div>`
   }
@@ -61,6 +61,11 @@ export class Note {
   get createdDate() {
     return this.createdOn.toLocaleDateString()
   }
+
+  get lastEditedDate() {
+    return this.lastEdited.toLocaleDateString()
+  }
+
 
 
   get bodyPreview() {

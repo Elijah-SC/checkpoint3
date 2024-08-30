@@ -8,11 +8,14 @@ export class NotesController {
   constructor() {
     // Pop.toast(`NotesController is live`)
     AppState.on(`activeNote`, this.drawActiveNote)
+    AppState.on(`Notes`, this.drawNotesList)
     this.drawNotesList()
   }
 
 
   drawActiveNote() {
+    const note = AppState.activeNote
+    setHTML(`activeCard`, note.activeCardTemplate)
 
   }
   drawNotesList() {
@@ -25,6 +28,10 @@ export class NotesController {
 
   setActiveNote(cardId) {
     notesService.setActiveNote(cardId)
+  }
+
+  createNote() {
+
   }
 
 }

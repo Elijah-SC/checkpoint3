@@ -28,11 +28,9 @@
       <section class="col-4 cardlist">
         <div class="m-1 bg-card activeCard">
           <p class="text-end">Total Jots</p>
-
-
           <div>
             <p class="ps-3 text-muted">add a Jot</p>
-            <form action="" class="d-flex align-items-center justify-content-evenly">
+            <form onsubmit="" class="d-flex align-items-center justify-content-evenly">
               <div>
                 <input class="rounded" type="color" name="color">
               </div>
@@ -40,7 +38,7 @@
                 <input type="text" class="form-control" id="name" name="name" placeholder="name of Jot" minlength="3"
                   maxlength="12">
               </div>
-              <button class="btn btn-primary">Create</button>
+              <button class="btn btn-primary" type="submit">Create</button>
             </form>
           </div>
           <hr class="bg-muted">
