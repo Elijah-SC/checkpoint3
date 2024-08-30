@@ -20,18 +20,21 @@ export class Note {
   get notesListTemplate() {
 
     return /*HTML*/`
-    <div class="sidebar mb-3">
+    <div class="ps-2 mb-3" role="button" style="border-left: 2px solid ${this.color}">
     <div class="d-flex justify-content-between">
-      <h3>CSS Tricks</h3>
-      <time>8/30/24</time>
+      <p class="fw-bold fs-5">${this.name}</p>
+      <time>${this.createdDate}</time>
     </div>
     <div>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid, culpa similique facilis sit hic
-        repellendus minima sequi? Esse perspiciatis sint nam maiores reiciendis culpa repudiandae at,
-        similique porro tempore id.
-      </p>
+      <p class="fs-7">${this.body}</p>
     </div>
 
   </div>`
   }
+
+  get createdDate() {
+    return this.createdOn.toLocaleDateString()
+  }
 }
+
+

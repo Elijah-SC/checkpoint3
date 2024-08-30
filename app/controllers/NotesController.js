@@ -5,7 +5,7 @@ import { setHTML } from "../utils/Writer.js";
 export class NotesController {
 
   constructor() {
-    Pop.toast(`NotesController is live`)
+    // Pop.toast(`NotesController is live`)
     this.drawNotesList()
   }
 

@@ -13,7 +13,7 @@ class ObservableAppState extends EventEmitter {
       these classes can be used in html by putting them in classes on tags`,
         createdOn: `8/29/24`,
         lastEdited: `8/30/24`,
-        color: `#E1561B`,
+        color: `#1996c6`,
       }),
     new Note({
       name: `Html Tips and Tricks`,
@@ -28,7 +28,7 @@ class ObservableAppState extends EventEmitter {
       name: `Javascript Tips and Tricks`,
       body: `You can create classes by starting with a period and opening them with curly brackets
       these classes can be used in html by putting them in classes on tags`,
-      color: `#E1561B`,
+      color: `#ff0000`,
     }),
 
 
