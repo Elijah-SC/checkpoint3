@@ -1,4 +1,5 @@
 import { AppState } from "../AppState.js";
+import { Note } from "../models/Note.js";
 import { notesService } from "../services/NotesService.js";
 import { getFormData } from "../utils/FormHandler.js";
 import { Pop } from "../utils/Pop.js";
@@ -11,6 +12,7 @@ export class NotesController {
     AppState.on(`activeNote`, this.drawActiveNote)
     AppState.on(`Notes`, this.drawNotesList)
     AppState.on(`Notes`, this.drawTotalNotes)
+    // AppState.on(`Notes`, this.drawDefaultView)
 
     notesService.loadNotes()
   }
@@ -25,8 +27,13 @@ export class NotesController {
 
 
   drawActiveNote() {
-    const note = AppState.activeNote
-    setHTML(`activeCard`, note.activeCardTemplate)
+    if (AppState.activeNote == null) {
+      const note = AppState.activeNote
+      setHTML(`activeCard`, Note.defaultViewTemplate)
+    } else {
+      const note = AppState.activeNote
+      setHTML(`activeCard`, note.activeCardTemplate)
+    }
 
   }
   drawNotesList() {
@@ -61,9 +68,11 @@ export class NotesController {
   }
 
   deleteNote(noteId) {
+    const wantsToDelete = window.confirm(`Are you sure you want to delete this note?`)
+    if (!wantsToDelete) return
     console.log(`deleting Note`);
     notesService.deleteNote(noteId)
-
   }
+
 
 }

@@ -58,6 +58,18 @@ export class Note {
           </div>`
   }
 
+  static get defaultViewTemplate() {
+    return ` <div class="container-fluid activeCard d-flex align-items-center justify-content-around">
+            <div class="row justify-content-around">
+              <div class="col-12 text-center">
+                <img class="w-100 img-fluid text-center" src="assets/img/default.png"
+                  alt="Guy working on computer drinking coffee">
+                <p class="text-center fw-bold">Create or select a Note to start</p>
+              </div>
+            </div>
+          </div>`
+  }
+
   get createdDate() {
     return this.createdOn.toLocaleDateString()
   }

@@ -5,10 +5,11 @@ import { loadState, saveState } from "../utils/Store.js"
 class NotesService {
   deleteNote(noteId) {
     const notes = AppState.Notes
-    const noteIndex = notes.findIndex(note => note.id = noteId)
+    const noteIndex = notes.findIndex(note => note.id == noteId)
+    if (noteIndex == -1) return
     notes.splice(noteIndex, 1)
-
     this.saveNotes()
+    AppState.activeNote = null
 
   }
   updateNote(updatedBody) {
