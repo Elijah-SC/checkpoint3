@@ -1,5 +1,6 @@
 import { AppState } from "../AppState.js";
 import { notesService } from "../services/NotesService.js";
+import { getFormData } from "../utils/FormHandler.js";
 import { Pop } from "../utils/Pop.js";
 import { setHTML } from "../utils/Writer.js";
 
@@ -31,7 +32,12 @@ export class NotesController {
   }
 
   createNote() {
-
+    event.preventDefault()
+    console.log(`creating Note`);
+    const form = event.target
+    const noteDataFromForm = getFormData(form)
+    // console.log(`note data from form`, noteDataFromForm)
+    notesService.createNote(noteDataFromForm)
   }
 
 }

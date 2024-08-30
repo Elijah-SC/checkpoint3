@@ -24,7 +24,7 @@ body {
 }
 
 .activeCard {
-  min-height: 90vh;
+  min-height: 93vh;
   border-radius: 5px;
   padding: .5em;
 }

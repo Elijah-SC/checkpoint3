@@ -43,7 +43,7 @@ export class Note {
                 <div class="row justify-content-between">
                   <div class="col-5">
                     <p class="ms-2">Created on: ${this.createdDate}</p>
-                    <p class="ms-2">Last updated: ${this.lastEditedDate}</p>
+                    <p class="ms-2">Last updated: ${this.lastEditedDate} at ${this.lastEditedTime}</p>
                   </div>
                   <div class="col-5 text-center">
                     <button class="mx-1 btn btn-outline-danger"><i class="mdi mdi-trash-can"></i>Delete</button>
@@ -64,6 +64,10 @@ export class Note {
 
   get lastEditedDate() {
     return this.lastEdited.toLocaleDateString()
+  }
+
+  get lastEditedTime() {
+    return this.lastEdited.toLocaleTimeString()
   }
 
 
