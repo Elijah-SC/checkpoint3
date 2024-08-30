@@ -9,7 +9,35 @@
 
 }
 
-* {
+body {
   background-color: var(--dark);
   color: white;
+}
+
+.bg-muted {
+  background-color: var(--muted);
+}
+
+.bg-card {
+  background-color: var(--card);
+
+}
+
+.activeCard {
+  min-height: 90vh;
+  border-radius: 5px;
+  padding: .5em;
+}
+
+.pageCard {
+  min-height: 90vh;
+}
+
+p,
+h1 {
+  margin-bottom: unset;
+}
+
+.text-muted {
+  color: var(--muted);
 }

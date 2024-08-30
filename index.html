@@ -22,8 +22,39 @@
   </header>
 
   <!-- SECTION -->
-  <main>
-    <!-- <section id="router-view"></section> -->
+  <main class="container-fluid">
+    <p class="p-1 fs-3">Jot..</p>
+    <div class="row justify-content-center pageCard">
+      <div class="col-4 cardlist">
+        <div class="m-1 bg-card activeCard">
+          <p class="text-end">Total Jots</p>
+
+
+          <div>
+            <p class="ps-3 text-muted">add a Jot</p>
+            <form action="" class="d-flex align-items-center justify-content-evenly">
+              <div>
+                <input class="rounded" type="color">
+              </div>
+              <div class="mx-2">
+                <input type="text" class="form-control" id="Title" name="Title" placeholder="name of Jot" minlength="3"
+                  maxlength="12">
+              </div>
+              <button class="btn btn-primary">Create</button>
+            </form>
+          </div>
+
+
+        </div>
+
+
+      </div>
+      <div class="col-8">
+        <div class="m-1 bg-card activeCard">
+          <h1>Active Jots</h1>
+        </div>
+      </div>
+    </div>
   </main>
 
   <!-- SECTION -->
