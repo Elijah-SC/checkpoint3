@@ -20,7 +20,7 @@ export class Note {
   get notesListTemplate() {
 
     return `
-    <div onclick="app.NotesController.setActiveNote('${this.id}')" class="ps-2 mb-3" role="button" style="border-left: 2px solid ${this.color}">
+    <div onclick="app.NotesController.setActiveNote('${this.id}')" class="ps-2 mb-3" role="button" style="border-left: 4px solid ${this.color}">
     <div class="d-flex justify-content-between">
       <p class="fw-bold fs-5">${this.name}</p>
       <time title="created ${this.createdDate} at ${this.createdTime} ">${this.createdDate}</time>
@@ -33,21 +33,21 @@ export class Note {
   }
 
   get activeCardTemplate() {
-    return `
+    return /*HTML*/`
     <div class="p-3">
-            <div class="mb-3" style="border-left: 2px solid ${this.color};">
+            <div class="mb-3" style="border-left: 4px solid ${this.color};">
               <div class="ms-2">
                 <h1>${this.name}</h1>
               </div>
-              <div class="container-fluid h-100">
+              <div class="container-fluid">
                 <div class="row justify-content-between">
                   <div class="col-5">
-                    <p class="ms-2">Created on: ${this.createdDate} at ${this.createdTime}</p>
-                    <p class="ms-2">Last updated: ${this.lastEditedDate} at ${this.lastEditedTime}</p>
+                    <p class="ms-2 date-size">Created on: ${this.createdDate} at ${this.createdTime}</p>
+                    <p class="ms-2 mt-3 date-size">Last updated: ${this.lastEditedDate} at ${this.lastEditedTime}</p>
                   </div>
                   <div class="col-5 text-center">
                     <button onclick="app.NotesController.deleteNote('${this.id}')" class="mx-1 btn btn-outline-danger"><i class="mdi mdi-trash-can"></i>Delete</button>
-                    <button class="mx-1 btn btn-primary"><i class="mdi mdi-content-save-check-outline"></i>Save</button>
+                    <button class="mx-1 btn btn-primary mt-md "><i class="mdi mdi-content-save-check-outline"></i>Save</button>
                   </div>
                 </div>
               </div>
@@ -55,7 +55,8 @@ export class Note {
             <div class="row activeText">
               <textarea onblur="app.NotesController.updateNote()" class="rounded bg-card text-muted" name="" id="">${this.body}</textarea>
             </div>
-          </div>`
+          </div>
+          `
   }
 
   static get defaultViewTemplate() {

@@ -61,6 +61,27 @@ h6 {
 }
 
 .activeText {
-  min-height: 75vh;
+  min-height: 65vh;
+  max-height: 65vh;
 
+}
+
+.date-size {
+  font-size: 12px;
+}
+
+@media screen and (max-width:913px) {
+
+  .mt-md {
+    margin-top: 1em;
+  }
+}
+
+textarea {
+  border-color: var(--muted);
+}
+
+.input-name {
+  background-color: var(--dark);
+  border-color: unset;
 }
